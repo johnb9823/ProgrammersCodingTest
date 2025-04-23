@@ -94,8 +94,15 @@ SELECT COUNT(*) AS USERS
 from USER_INFO
 where age is null
 
-14.가장 비싼 상품 구하기
+14. 가장 비싼 상품 구하기
 PRODUCT 테이블에서 판매 중인 상품 중 가장 높은 판매가를 출력하는 SQL문을 작성해주세요. 이때 컬럼명은 MAX_PRICE로 지정해주세요.
 
 SELECT max (price) as MAX_PRICE
 from PRODUCT
+
+15. NULL 처리하기
+입양 게시판에 동물 정보를 게시하려 합니다. 동물의 생물 종, 이름, 성별 및 중성화 여부를 아이디 순으로 조회하는 SQL문을 작성해주세요. 
+이때 프로그래밍을 모르는 사람들은 NULL이라는 기호를 모르기 때문에, 이름이 없는 동물의 이름은 "No name"으로 표시해 주세요.
+
+SELECT ANIMAL_TYPE, IFNULL(NAME, 'No name') AS NAME, SEX_UPON_INTAKE
+from ANIMAL_INS
